@@ -7,7 +7,7 @@ import { createHumanLock, type HumanLock } from "../engine.js";
  *
  * ```html
  * <script type="module">
- *   import { mount } from "humanlock";
+ *   import { mount } from "@cococopi/humanlock";
  *   const guard = mount({ sessionKey: window.__HL_KEY });
  *   document.addEventListener("submit", async (e) => {
  *     e.preventDefault();

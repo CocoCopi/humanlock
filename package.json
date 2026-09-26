@@ -1,5 +1,5 @@
 {
-  "name": "humanlock",
+  "name": "@cococopi/humanlock",
   "version": "0.1.0",
   "description": "Client-side automated-agent and AI computer-use detection for high-trust flows. Framework-agnostic core with React, Vue, Svelte and vanilla adapters, plus signed verdicts for server-side scoring.",
   "keywords": [

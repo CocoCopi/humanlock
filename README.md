@@ -37,7 +37,7 @@ Each observation becomes a `Signal` with a severity. Signals are combined per ca
 ## Install
 
 ```bash
-npm install humanlock
+npm install @cococopi/humanlock
 ```
 
 ESM and CJS builds, TypeScript types included. Node >= 18 if you use the server verifier.
@@ -50,7 +50,7 @@ ESM and CJS builds, TypeScript types included. Node >= 18 if you use the server 
 
 ```html
 <script type="module">
-  import { mount, shouldChallenge } from "humanlock";
+  import { mount, shouldChallenge } from "@cococopi/humanlock";
 
   const guard = mount({ sessionKey: window.__HL_SESSION_KEY });
 
@@ -70,8 +70,8 @@ ESM and CJS builds, TypeScript types included. Node >= 18 if you use the server 
 ### React
 
 ```tsx
-import { useHumanLock } from "humanlock/react";
-import { shouldChallenge } from "humanlock";
+import { useHumanLock } from "@cococopi/humanlock/react";
+import { shouldChallenge } from "@cococopi/humanlock";
 
 function StartExam({ sessionKey }: { sessionKey: string }) {
   const { assessment, report } = useHumanLock({ sessionKey });
@@ -91,7 +91,7 @@ function StartExam({ sessionKey }: { sessionKey: string }) {
 
 ```vue
 <script setup lang="ts">
-import { useHumanLock } from "humanlock/vue";
+import { useHumanLock } from "@cococopi/humanlock/vue";
 
 const { assessment, report } = useHumanLock({ sessionKey: window.__HL_SESSION_KEY });
 </script>
@@ -107,7 +107,7 @@ const { assessment, report } = useHumanLock({ sessionKey: window.__HL_SESSION_KE
 
 ```svelte
 <script lang="ts">
-  import { humanlock } from "humanlock/svelte";
+  import { humanlock } from "@cococopi/humanlock/svelte";
   export let sessionKey: string;
 </script>
 
@@ -121,7 +121,7 @@ const { assessment, report } = useHumanLock({ sessionKey: window.__HL_SESSION_KE
 The client's verdict is untrusted. Verify the signature, then apply your own policy.
 
 ```ts
-import { verifyTrace } from "humanlock/server";
+import { verifyTrace } from "@cococopi/humanlock/server";
 
 app.post("/api/session/verify", (req, res) => {
   const result = verifyTrace(req.body.trace, sessionKeyFor(req), {
